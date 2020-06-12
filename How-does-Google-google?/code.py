@@ -38,9 +38,9 @@ init_I = np.array([1,0,0,0,0,0,0,0])
 # Perform iterations for power method
 for i in range(10):
     init_I  = np.dot(adj_mat, init_I)
-    # init_I = abs(init_I / np.linalg.norm(init_I))
-    print(init_I)
-
+    init_I = init_I / np.linalg.norm(init_I,1)
+    
+print(init_I)
 power_page = np.where(init_I==max(init_I))[0][0]+1
 print(power_page)
 
